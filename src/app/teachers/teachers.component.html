@@ -1,0 +1,72 @@
+
+
+<input type="text" [(ngModel)]="color">
+<div [ngSwitch]="color">
+<h3 *ngSwitchCase="'red'" style="color: red;"> {{color}} </h3>
+<h3 *ngSwitchcase="'black'" style="color: black;">{{color}} </h3>
+
+
+<h3 *ngSwitchcase="'yellow'" style="color: yellow;">{{color}} </h3>
+<h3 *ngSwitchCase="'green'" style="color: green;">{{color}} </h3>
+<h3 *ngSwtichCase="'orange'" style="color: orange;">{{color}} </h3>
+
+
+
+
+
+</div>
+<div *ngFor="let user of users let i=index">
+   id :{{i}}  name :{{user}}
+
+
+
+</div> <br>
+<div *ngFor="let client of clients |filter:search ">
+
+    {{client.name}}
+    {{client.age}}
+    {{client.job}}
+
+
+
+
+</div>
+<input type="text" [(ngModel)]="search">
+<table class="table table-bordered" >
+    <thead >
+    <tr >
+        <th>id</th>
+        <th>name</th>
+        <th>age</th>
+        <th>job</th>
+        <th>phone</th>
+        <th>email</th>
+
+    </tr>
+</thead>
+    <tr *ngFor="let client of clients let id=index  " >
+<td>
+    {{id}}
+</td>
+<td>
+    {{client.name}}
+</td>
+<td>
+    {{client.age}}
+</td>
+<td>
+    {{client.job}}
+</td>
+ 
+ 
+<td *ngFor="let contact of client.contacts h " >{{contact.phone}}</td>
+<td *ngFor="let contact of client.contacts" >{{contact.email}}</td>
+
+    </tr>
+
+
+
+
+</table>
+
+

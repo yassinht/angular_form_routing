@@ -1,0 +1,19 @@
+<p>student works!</p>
+<input type="text" [(ngModel)]="search">
+<form #expform="ngForm" (submit)="register(expform.value)">
+
+
+    <input type="text" placeholder="user" ngModel name="user"><br>
+    <input type="text" placeholder="email"  ngModel name="email"><br>
+    <input type="text" placeholder="pasword" ngModel name="password"><br>
+    <button name="sign-up" > sign_up</button>
+
+    </form>
+
+    <ul *ngFor="let person of exp | filter:search">
+        <li>{{person.user}}</li>
+        <li>{{person.email}}</li>
+        <li>{{person.password}}</li>
+
+    </ul>
+   
